@@ -1,0 +1,49 @@
+---
+---
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-text">Lumière</span>
+      <span class="nav-logo-dot">✦</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#treatments">Treatment</a></li>
+      <li><a href="#technology">Teknologi</a></li>
+      <li><a href="#doctors">Dokter</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#booking">Lokasi</a></li>
+    </ul>
+    <a href="#booking" class="btn btn-gold btn-sm nav-cta" id="navCta">Book Konsultasi</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<script>
+  const nav       = document.getElementById('nav')!;
+  const hamburger = document.getElementById('navHamburger')!;
+  const navLinks  = document.getElementById('navLinks')!;
+  const navCta    = document.getElementById('navCta')!;
+
+  // Scroll: add class when not at top
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // Mobile toggle
+  hamburger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navCta.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+  });
+
+  // Close on link click
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navCta.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

@@ -1,0 +1,34 @@
+---
+const treatments = [
+  { icon: '✨', name: 'Lumière Glow Facial', desc: 'Multi-step facial dengan LED therapy untuk kulit bersih bercahaya. Cocok untuk semua jenis kulit.', price: 'Rp 850.000 / sesi' },
+  { icon: '💧', name: 'HydraFacial MD', desc: 'Deep cleansing + serum infusion dengan alat original dari Amerika. Kulit lembap instan dalam 30 menit.', price: 'Rp 1.500.000 / sesi' },
+  { icon: '⚡', name: 'Pico Laser', desc: 'Teknologi picosecond laser untuk hilangkan flek, bekas jerawat, dan meremajakan tekstur kulit.', price: 'Rp 2.200.000 / sesi' },
+  { icon: '💎', name: 'Skin Booster Injection', desc: 'Hidrasi mendalam dari dalam kulit dengan micro-injection hyaluronic acid oleh dokter bersertifikasi.', price: 'Rp 3.500.000 / sesi' },
+  { icon: '🔬', name: 'RF Microneedling', desc: 'Radiofrequency + microneedling untuk mengencangkan kulit dan memperbaiki tekstur dengan stimulasi kolagen.', price: 'Rp 2.800.000 / sesi' },
+  { icon: '🌿', name: 'Botox & Filler', desc: 'Anti-aging oleh dokter bersertifikasi internasional. Natural result, zero downtime, efek hingga 12 bulan.', price: 'Mulai Rp 4.000.000' },
+];
+---
+<section class="section section--dark2" id="treatments">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <p class="label-tag" data-reveal>Unggulan Kami</p>
+      <h2 class="section-heading section-heading--light" data-reveal data-delay="1">Signature Treatments</h2>
+      <p class="section-sub section-sub--light" data-reveal data-delay="2">
+        Kombinasi teknologi dan keahlian dokter untuk hasil yang <em>sustainable</em> dan terukur.
+      </p>
+    </div>
+    <div class="treatments-grid">
+      {treatments.map((t, i) => (
+        <div class="treatment-card" data-reveal data-delay={String((i % 3) + 1)}>
+          <div class="treatment-icon">{t.icon}</div>
+          <div class="treatment-name">{t.name}</div>
+          <div class="treatment-desc">{t.desc}</div>
+          <div class="treatment-footer">
+            <span class="treatment-price">{t.price}</span>
+            <span class="treatment-link">Selengkapnya →</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

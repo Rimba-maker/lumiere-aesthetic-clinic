@@ -1,0 +1,31 @@
+---
+const devices = [
+  { badge: 'FDA Cleared',   icon: '⚡', name: 'PicoSure Pro',  desc: 'Pico laser tercepat untuk pigmentation dan rejuvenation dengan picosecond pulses.' },
+  { badge: 'Original US',  icon: '💧', name: 'HydraFacial MD', desc: 'Satu-satunya alat yang membersihkan, mengekstrak, dan menginfusikan secara simultan.' },
+  { badge: 'CE Certified', icon: '🔬', name: 'Morpheus8',      desc: 'RF microneedling yang menembus ke lapisan dermal terdalam untuk lifting optimal.' },
+  { badge: 'FDA Approved', icon: '🔊', name: 'Ultherapy',      desc: 'Non-invasive skin lifting dengan clearance FDA untuk wajah & leher.' },
+  { badge: 'CE Certified', icon: '🌟', name: 'Lumecca IPL',    desc: 'Photofacial terkuat untuk redness, sun damage, dan vascular concerns.' },
+];
+---
+<section class="section section--dark" id="technology">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <p class="label-tag" data-reveal>Alat Medis Terdepan</p>
+      <h2 class="section-heading section-heading--light" data-reveal data-delay="1">Teknologi Berstandar Internasional</h2>
+      <p class="section-sub section-sub--light" data-reveal data-delay="2">
+        Kami invest dalam alat-alat aesthetic terdepan yang sudah teruji klinis dan disetujui FDA/CE.
+        Karena hasil terbaik datang dari teknologi terbaik di tangan ahli.
+      </p>
+    </div>
+    <div class="tech-grid">
+      {devices.map((d, i) => (
+        <div class="tech-card" data-reveal data-delay={String(i + 1)}>
+          <div class="tech-badge">{d.badge}</div>
+          <div class="tech-icon">{d.icon}</div>
+          <div class="tech-name">{d.name}</div>
+          <div class="tech-desc">{d.desc}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
