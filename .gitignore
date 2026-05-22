@@ -4,3 +4,7 @@ node_modules/
 .env
 .env.*
 !.env.example
+
+# Private documentation and references
+36-klinik-kecantikan-estetika-PRD.md
+_design-reference.astro
