@@ -70,7 +70,7 @@ export const tour = [
 export const plans = [
   {
     key: 'bridal', name: 'Paket Bridal Glow', who: 'Persiapan kulit sebelum hari pernikahan.',
-    price: 'Rp 12,5 jt', per: '/ 3 bulan', saving: 'Hemat 30%', img: 'plan-bridal', alt: 'Masker tidur bertuliskan Bride di meja rias', pos: '50% 50%',
+    price: 'Rp 12,5 jt', per: '/ 3 bulan', saving: 'Hemat 30%', img: 'plan-bridal', alt: 'Pengantin memegang buket mawar putih di dekat jendela', pos: '50% 22%',
     items: ['6x HydraFacial', '3x Skin Booster', 'Konsultasi 1-on-1 dengan dokter', 'Free LED therapy 4 sesi'],
   },
   {
@@ -80,7 +80,7 @@ export const plans = [
   },
   {
     key: 'vip', name: 'Paket VIP tahunan', who: 'Satu tahun perawatan dengan aesthetician pribadi.',
-    price: 'Rp 25 jt', per: '/ tahun', saving: 'Hemat 40%', img: 'plan-vip', alt: 'Botol serum putih di atas marmer', pos: '50% 55%',
+    price: 'Rp 25 jt', per: '/ tahun', saving: 'Hemat 40%', img: 'plan-vip', alt: 'Wanita berhanduk meneteskan serum ke wajah', pos: '50% 40%',
     items: ['Unlimited HydraFacial', '6x signature treatment pilihan', 'Personal aesthetician', 'Home skincare bundle'],
   },
 ] as const;

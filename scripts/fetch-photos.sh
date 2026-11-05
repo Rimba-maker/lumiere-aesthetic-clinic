@@ -43,8 +43,8 @@ tour-treatment:35884499:1200
 tour-lounge:208504:1200
 tour-reception:8459996:1200
 tour-bath:374148:1200
-plan-bridal:313720:900
+plan-bridal:26832149:900
 plan-member:374071:900
-plan-vip:4735932:900
+plan-vip:4612159:900
 booking-consult:7578806:1200
 LIST
