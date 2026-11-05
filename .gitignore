@@ -12,3 +12,7 @@ _design-reference.astro
 # Local checker output
 shots/
 .taste-skill/
+
+# Build process docs & Claude skills (local only)
+docs/
+.claude/
