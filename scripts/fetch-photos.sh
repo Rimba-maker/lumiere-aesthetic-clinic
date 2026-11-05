@@ -11,7 +11,8 @@ while IFS=: read -r name id w; do
   tmp="$(mktemp --suffix=.jpg)"
   curl -sSf -m 60 -o "$tmp" "https://images.pexels.com/photos/$id/pexels-photo-$id.jpeg?auto=compress&cs=tinysrgb&w=$w"
   convert "$tmp" -strip -quality 78 "$OUT/$name.webp"
-  convert "$tmp" -resize 600x -strip -quality 74 "$OUT/$name-600.webp"
+  convert "$tmp" -resize 400x -strip -quality 72 "$OUT/$name-400.webp"
+  convert "$tmp" -resize 800x -strip -quality 74 "$OUT/$name-800.webp"
   rm -f "$tmp"
   echo "ok $name ($id)"
 done <<'LIST'
