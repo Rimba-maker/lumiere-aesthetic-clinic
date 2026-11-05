@@ -1,5 +1,6 @@
 ---
-import { concerns, photo } from '../data/clinic';
+import { concerns } from '../data/clinic';
+import Img from './Img.astro';
 ---
 <section class="section" id="concern" aria-labelledby="concern-h">
   <div class="wrap">
@@ -8,10 +9,10 @@ import { concerns, photo } from '../data/clinic';
     </div>
     <div class="grid">
       {concerns.map((c) => (
-        <a class="tile span-4" href="#booking">
-          <div class="tile__media"><img src={photo(c.img)} alt={c.alt} width="1000" height="667" loading="lazy" decoding="async" style={`object-position:${c.pos}`} data-source="library-pexels" data-subject={c.name} /></div>
+        <a class={`tile span-4 focus-${c.img}`} href="#booking">
+          <div class="tile__media"><Img name={c.img} alt={c.alt} w={1000} h={667} sizes="(max-width: 639px) 50vw, 33vw" subject={c.name} /></div>
           <div class="tile__head"><h3>{c.name}</h3></div>
-          <p class="ph-hide">{c.line}</p>
+          <p class="ph-hide nt-hide">{c.line}</p>
         </a>
       ))}
     </div>

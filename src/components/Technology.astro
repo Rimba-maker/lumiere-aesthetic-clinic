@@ -1,5 +1,6 @@
 ---
-import { devices, photo } from '../data/clinic';
+import { devices } from '../data/clinic';
+import Img from './Img.astro';
 ---
 <section class="section" id="teknologi" aria-labelledby="teknologi-h">
   <div class="wrap">
@@ -8,12 +9,12 @@ import { devices, photo } from '../data/clinic';
     </div>
     <div class="grid grid--top fill">
       <ul class="rows rows--spec span-6">
-        {devices.map((d) => (
-          <li><span class="rows__name">{d.name}</span><p>{d.line}</p></li>
+        {devices.map((d, i) => (
+          <li class={i > 2 ? 'ph-hide' : undefined}><span class="rows__name">{d.name}</span><p>{d.line}</p></li>
         ))}
       </ul>
       <div class="frame frame--photo frame--fill span-6 start-7">
-        <img class="frame__img" src={photo('tech-device')} width="1400" height="933" loading="lazy" decoding="async" alt="Dokter menjalankan treatment wajah dengan perangkat klinis" style="object-position: 50% 55%" data-source="library-pexels" data-subject="aesthetic device" />
+        <Img class="frame__img" name="tech-device" w={1400} h={933} alt="Dokter menjalankan treatment wajah dengan perangkat klinis" pos="50% 55%" subject="aesthetic device" />
       </div>
     </div>
   </div>

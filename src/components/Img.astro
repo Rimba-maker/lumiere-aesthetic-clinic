@@ -1,0 +1,36 @@
+---
+// One photo: a 600w file for phones, the full file for desktop. Only the hero loads with priority;
+// every other photo is eager too, so a tap on a menu link never lands on an empty frame (skill photos.md).
+import { photo } from '../data/clinic';
+interface Props {
+  name: string;
+  alt: string;
+  w: number;
+  h: number;
+  sizes?: string;
+  pos?: string;
+  subject?: string;
+  priority?: boolean;
+  class?: string;
+  hidden?: boolean;
+  peek?: string;
+}
+const { name, alt, w, h, sizes = '(max-width: 639px) 100vw, 50vw', pos, subject = '', priority = false, hidden = false, peek } = Astro.props;
+const cls = Astro.props.class;
+---
+<img
+  class={cls}
+  src={photo(name)}
+  srcset={`${photo(name + '-600')} 600w, ${photo(name)} ${w}w`}
+  sizes={sizes}
+  width={w}
+  height={h}
+  alt={alt}
+  decoding="async"
+  fetchpriority={priority ? 'high' : undefined}
+  hidden={hidden || undefined}
+  data-peek-for={peek}
+  style={pos ? `object-position:${pos}` : undefined}
+  data-source="library-pexels"
+  data-subject={subject}
+/>

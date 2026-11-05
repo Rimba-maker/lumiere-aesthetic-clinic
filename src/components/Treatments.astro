@@ -1,7 +1,8 @@
 ---
-import { treatments, photo } from '../data/clinic';
+import { treatments } from '../data/clinic';
+import Img from './Img.astro';
 ---
-<section class="section" id="treatment" style="--hm: 2" aria-labelledby="treatment-h">
+<section class="section" id="treatment" aria-labelledby="treatment-h" style="--hm: 2">
   <div class="wrap">
     <div class="section-head">
       <h2 id="treatment-h">6 signature treatment, mulai Rp 850 rb</h2>
@@ -19,7 +20,7 @@ import { treatments, photo } from '../data/clinic';
       </ul>
       <div class="frame frame--photo frame--fill span-6 start-7">
         {treatments.map((t, i) => (
-          <img class="frame__img" data-peek-for={t.key} src={photo(t.img)} alt={t.alt} width="1200" height="1500" hidden={i > 0} data-source="library-pexels" data-subject={t.name} />
+          <Img class="frame__img" name={t.img} peek={t.key} alt={t.alt} w={1200} h={1500} subject={t.name} hidden={i > 0} />
         ))}
       </div>
     </div>

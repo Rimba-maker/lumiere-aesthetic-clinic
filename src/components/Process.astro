@@ -1,5 +1,6 @@
 ---
-import { steps, photo } from '../data/clinic';
+import { steps } from '../data/clinic';
+import Img from './Img.astro';
 ---
 <section class="section" id="proses" aria-labelledby="proses-h">
   <div class="wrap">
@@ -8,11 +9,11 @@ import { steps, photo } from '../data/clinic';
     </div>
     <div class="grid">
       {steps.map((s) => (
-        <article class="tile span-4">
-          <div class="tile__media"><img src={photo(s.img)} alt={s.alt} width="1000" height="667" loading="lazy" decoding="async" style={`object-position:${s.pos}`} data-source="library-pexels" data-subject={s.title} /></div>
+        <article class={`tile span-4 focus-${s.img}`}>
+          <div class="tile__media"><Img name={s.img} alt={s.alt} w={1000} h={667} sizes="(max-width: 639px) 50vw, 33vw" subject={s.title} /></div>
           <p class="tile__facts">Langkah {s.n}</p>
           <div class="tile__head"><h3>{s.title}</h3></div>
-          <p class="ph-hide">{s.line}</p>
+          <p class="ph-hide nt-hide">{s.line}</p>
         </article>
       ))}
     </div>

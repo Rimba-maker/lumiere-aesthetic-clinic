@@ -1,5 +1,6 @@
 ---
-import { tour, photo } from '../data/clinic';
+import { tour } from '../data/clinic';
+import Img from './Img.astro';
 const rows = [tour.slice(0, 3), tour.slice(3)];
 ---
 <section class="section" id="klinik" aria-labelledby="klinik-h">
@@ -12,7 +13,7 @@ const rows = [tour.slice(0, 3), tour.slice(3)];
       {rows.map((row) => (
         <div class="wall__row">
           {row.map((t) => (
-            <a href="#booking"><img src={photo(t.img)} alt={t.alt} width="1200" height="800" loading="lazy" decoding="async" style={`object-position:${t.pos}`} data-source="library-pexels" data-subject="clinic interior" /></a>
+            <a href="#booking"><Img name={t.img} alt={t.alt} w={1200} h={800} sizes="(max-width: 639px) 34vw, 34vw" pos={t.pos} subject="clinic interior" /></a>
           ))}
         </div>
       ))}

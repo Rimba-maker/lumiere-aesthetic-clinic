@@ -1,5 +1,6 @@
 ---
-import { brand, photo } from '../data/clinic';
+import { brand } from '../data/clinic';
+import Img from './Img.astro';
 ---
 <section class="hero hero--split" aria-labelledby="hero-h">
   <div class="wrap">
@@ -19,7 +20,7 @@ import { brand, photo } from '../data/clinic';
         </dl>
       </div>
       <div class="hero-visual frame frame--photo span-6 start-7">
-        <img class="frame__img" src={photo('hero-facial')} width="1600" height="2400" alt="Klien menjalani facial dengan perangkat klinis di Lumière" fetchpriority="high" style="object-position: 50% 40%" data-source="library-pexels" data-subject="facial treatment">
+        <Img class="frame__img" name="hero-facial" w={1600} h={2400} alt="Klien menjalani facial dengan perangkat klinis di Lumière" pos="50% 40%" subject="facial treatment" priority />
       </div>
     </div>
   </div>

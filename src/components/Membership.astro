@@ -1,22 +1,23 @@
 ---
-import { plans, photo } from '../data/clinic';
+import { plans } from '../data/clinic';
+import Img from './Img.astro';
 ---
-<section class="section" id="membership" style="--hm: 2" aria-labelledby="membership-h">
+<section class="section" id="membership" aria-labelledby="membership-h" style="--hm: 2">
   <div class="wrap">
     <div class="section-head">
       <h2 id="membership-h">Paket dan membership</h2>
     </div>
     <div class="grid">
       {plans.map((p) => (
-        <article class="tile span-4">
-          <div class="tile__media"><img src={photo(p.img)} alt={p.alt} width="900" height="600" loading="lazy" decoding="async" style={`object-position:${p.pos}`} data-source="library-pexels" data-subject={p.name} /></div>
-          <div class="tile__head"><h3>{p.name}</h3>{p.saving && <span class="badge">{p.saving}</span>}</div>
-          <p class="price"><span class="t-stat">{p.price}</span><span class="muted">{p.per}</span></p>
-          <ul class="checks">
+        <a class={`tile span-4 focus-${p.img}`} href="#booking">
+          <div class="tile__media"><Img name={p.img} alt={p.alt} w={900} h={600} sizes="(max-width: 1023px) 100vw, 33vw" subject={p.name} /></div>
+          <div class="tile__head"><h3>{p.name}</h3></div>
+          <p class="price"><span class="t-stat">{p.price}</span><span class="muted">{p.per}{p.saving ? `, ${p.saving.toLowerCase()}` : ''}</span></p>
+          <ul class="plan__list">
             {p.items.map((i) => <li>{i}</li>)}
           </ul>
-          <a class="btn btn--secondary" href="#booking">Book paket</a>
-        </article>
+          <span class="link">Book paket</span>
+        </a>
       ))}
     </div>
   </div>

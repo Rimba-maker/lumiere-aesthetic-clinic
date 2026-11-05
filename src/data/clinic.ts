@@ -69,17 +69,17 @@ export const tour = [
 
 export const plans = [
   {
-    key: 'bridal', name: 'Bridal Glow Package', who: 'Persiapan kulit sebelum hari pernikahan.',
+    key: 'bridal', name: 'Paket Bridal Glow', who: 'Persiapan kulit sebelum hari pernikahan.',
     price: 'Rp 12,5 jt', per: '/ 3 bulan', saving: 'Hemat 30%', img: 'plan-bridal', alt: 'Masker tidur bertuliskan Bride di meja rias', pos: '50% 50%',
     items: ['6x HydraFacial', '3x Skin Booster', 'Konsultasi 1-on-1 dengan dokter', 'Free LED therapy 4 sesi'],
   },
   {
-    key: 'member', name: 'Lumière Member', who: 'Perawatan rutin dengan keuntungan member.',
+    key: 'member', name: 'Paket Member Lumière', who: 'Perawatan rutin dengan keuntungan member.',
     price: 'Rp 5 jt', per: '/ 6 bulan', saving: '', img: 'plan-member', alt: 'Handuk, lilin dan garam mandi di meja kayu', pos: '50% 60%',
     items: ['10% off semua treatment', 'Priority booking', 'Free birthday treatment', 'Quarterly skin analysis'],
   },
   {
-    key: 'vip', name: 'VIP Annual', who: 'Satu tahun perawatan dengan aesthetician pribadi.',
+    key: 'vip', name: 'Paket VIP tahunan', who: 'Satu tahun perawatan dengan aesthetician pribadi.',
     price: 'Rp 25 jt', per: '/ tahun', saving: 'Hemat 40%', img: 'plan-vip', alt: 'Botol serum putih di atas marmer', pos: '50% 55%',
     items: ['Unlimited HydraFacial', '6x signature treatment pilihan', 'Personal aesthetician', 'Home skincare bundle'],
   },
@@ -87,11 +87,10 @@ export const plans = [
 
 export const faq = [
   { q: 'Apakah konsultasi pertama gratis?', a: 'Ya. Dokter menganalisis kondisi kulit Anda, lalu merekomendasikan treatment yang sesuai.' },
-  { q: 'Apakah teknologi Lumière sudah teruji?', a: 'Alat kami teruji klinis dan disetujui FDA/CE, dan dioperasikan oleh dokter.' },
-  { q: 'Berapa lama hasilnya terlihat?', a: 'Hasil dapat bervariasi tiap individu. Dokter menjelaskan perkiraan hasil sebelum treatment, tanpa janji berlebihan.' },
   { q: 'Berapa harga treatment?', a: 'Signature treatment mulai Rp 850 rb per sesi, botox dan filler mulai Rp 4 jt. Dokter memberi rencana setelah konsultasi.' },
-  { q: 'Apakah ada treatment untuk pria?', a: 'Ya. Semua concern kulit bisa dikonsultasikan oleh wanita maupun pria.' },
-  { q: 'Di mana saja cabang Lumière?', a: 'Jakarta (PIK, Kemang, Senopati), Surabaya, dan Bandung.' },
+  { q: 'Berapa lama hasilnya terlihat?', a: 'Hasil dapat bervariasi tiap individu. Dokter menjelaskan perkiraan hasil sebelum treatment, tanpa janji berlebihan.' },
+  { q: 'Apakah teknologi Lumière sudah teruji?', a: 'Alat kami teruji klinis dan disetujui FDA/CE, dan dioperasikan oleh dokter.' },
+  { q: 'Apa bedanya paket Member dan VIP tahunan?', a: 'Member berlaku 6 bulan dengan diskon 10% untuk semua treatment. VIP berlaku setahun dengan HydraFacial tanpa batas dan aesthetician pribadi.' },
 ] as const;
 
 export const branches = [
