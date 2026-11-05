@@ -1,0 +1,28 @@
+---
+import { treatments } from '../data/clinic';
+import Img from './Img.astro';
+---
+<section class="section" id="treatment" aria-labelledby="treatment-h" style="--hm: 2">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="treatment-h">6 signature treatment, mulai Rp 850 rb</h2>
+      <p class="nt-hide">Kombinasi teknologi dan keahlian dokter untuk hasil yang bertahan.</p>
+    </div>
+    <div class="grid grid--top fill" data-peek>
+      <ul class="rows span-6">
+        {treatments.map((t) => (
+          <li data-peek-to={t.key} tabindex="0">
+            <span class="rows__name">{t.name}</span>
+            <p>{t.line}</p>
+            <span class="rows__value">{t.price}</span>
+          </li>
+        ))}
+      </ul>
+      <div class="frame frame--photo frame--fill span-6 start-7">
+        {treatments.map((t, i) => (
+          <Img class="frame__img" name={t.img} peek={t.key} alt={t.alt} w={t.w ?? 1200} h={t.h ?? 1500} subject={t.name} hidden={i > 0} sizes="(max-width: 639px) 120vw, (max-width: 1023px) 100vw, 80vw" />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

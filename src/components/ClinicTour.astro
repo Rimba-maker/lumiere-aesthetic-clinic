@@ -1,0 +1,22 @@
+---
+import { tour } from '../data/clinic';
+import Img from './Img.astro';
+const rows = [tour.slice(0, 3), tour.slice(3)];
+---
+<section class="section" id="klinik" aria-labelledby="klinik-h">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="klinik-h">Ruang klinik yang nyaman seperti spa premium</h2>
+      <p>Setiap sudut dirancang untuk perawatan yang tenang, bukan suasana rumah sakit yang kaku.</p>
+    </div>
+    <div class="wall">
+      {rows.map((row) => (
+        <div class="wall__row">
+          {row.map((t) => (
+            <a href="#booking"><Img sizes="(max-width: 639px) 50vw, (max-width: 1023px) 45vw, 34vw" name={t.img} alt={t.alt} w={1200} h={800} pos={t.pos} subject="clinic interior" /></a>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

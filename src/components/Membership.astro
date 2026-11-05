@@ -1,67 +1,24 @@
 ---
+import { plans } from '../data/clinic';
+import Img from './Img.astro';
 ---
-<section class="section section--canvas" id="membership">
-  <div class="container">
-    <div class="section-header section-header--center">
-      <p class="label-tag" data-reveal>Pilih Paket Anda</p>
-      <h2 class="section-heading" data-reveal data-delay="1">Paket &amp; Membership</h2>
-      <p class="section-sub" data-reveal data-delay="2">
-        Investasikan dalam kecantikan Anda dengan paket yang dirancang untuk hasil terbaik.
-      </p>
+<section class="section" id="membership" aria-labelledby="membership-h" style="--hm: 2">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="membership-h">Paket dan membership</h2>
     </div>
-    <div class="membership-grid">
-
-      <!-- Bridal -->
-      <div class="membership-card" data-reveal data-delay="1">
-        <div class="membership-emoji">🎀</div>
-        <div class="membership-name">Bridal Glow Package</div>
-        <div class="membership-price">Rp 12,5jt</div>
-        <div class="membership-period">per 3 bulan</div>
-        <div class="membership-savings">Hemat 30%</div>
-        <div class="membership-divider"></div>
-        <ul class="membership-list">
-          <li class="membership-item">6x HydraFacial MD</li>
-          <li class="membership-item">3x Skin Booster Injection</li>
-          <li class="membership-item">Konsultasi 1-on-1 dengan dokter</li>
-          <li class="membership-item">Free LED Therapy 4 sesi</li>
-        </ul>
-        <a href="#booking" class="btn btn-ghost-ink membership-cta">Pilih Paket Ini</a>
-      </div>
-
-      <!-- VIP (center, animated border) -->
-      <div class="membership-card membership-card--vip" data-reveal data-delay="2">
-        <div class="membership-emoji">💎</div>
-        <div class="membership-name">VIP Annual</div>
-        <div class="membership-price">Rp 25jt</div>
-        <div class="membership-period">per tahun</div>
-        <div class="membership-savings">Hemat 40%</div>
-        <div class="membership-divider"></div>
-        <ul class="membership-list">
-          <li class="membership-item">Unlimited HydraFacial</li>
-          <li class="membership-item">6x Signature treatment pilihan</li>
-          <li class="membership-item">Personal aesthetician dedicated</li>
-          <li class="membership-item">Home skincare bundle eksklusif</li>
-        </ul>
-        <a href="#booking" class="btn btn-gold membership-cta">Pilih Paket VIP</a>
-      </div>
-
-      <!-- Member -->
-      <div class="membership-card" data-reveal data-delay="3">
-        <div class="membership-emoji">✨</div>
-        <div class="membership-name">Lumière Member</div>
-        <div class="membership-price">Rp 5jt</div>
-        <div class="membership-period">per 6 bulan</div>
-        <div class="membership-savings">Member Exclusive</div>
-        <div class="membership-divider"></div>
-        <ul class="membership-list">
-          <li class="membership-item">10% off semua treatment</li>
-          <li class="membership-item">Priority booking</li>
-          <li class="membership-item">Free birthday treatment</li>
-          <li class="membership-item">Quarterly skin analysis</li>
-        </ul>
-        <a href="#booking" class="btn btn-ghost-ink membership-cta">Pilih Paket Ini</a>
-      </div>
-
+    <div class="grid">
+      {plans.map((p) => (
+        <a class={`tile span-4 focus-${p.img}`} href="#booking">
+          <div class="tile__media"><Img sizes="(max-width: 1023px) 100vw, 33vw" name={p.img} alt={p.alt} w={900} h={600} subject={p.name} /></div>
+          <div class="tile__head"><h3>{p.name}</h3></div>
+          <p class="price"><span class="t-stat">{p.price}</span><span class="muted">{p.per}{p.saving ? `, ${p.saving.toLowerCase()}` : ''}</span></p>
+          <ul class="plan__list">
+            {p.items.map((i) => <li>{i}</li>)}
+          </ul>
+          <span class="link">Book paket</span>
+        </a>
+      ))}
     </div>
   </div>
 </section>

@@ -1,0 +1,40 @@
+---
+// One photo. srcset 400/800/full with a `sizes` that matches the layout, lazy by default, and a blurred
+// still of the picture behind it so a frame never reads empty while the file arrives (skill photos.md).
+import { photo } from '../data/clinic';
+import lqip from '../data/lqip.json';
+interface Props {
+  name: string;
+  alt: string;
+  w: number;
+  h: number;
+  sizes: string;
+  pos?: string;
+  subject?: string;
+  priority?: boolean;
+  class?: string;
+  hidden?: boolean;
+  peek?: string;
+}
+const { name, alt, w, h, sizes, pos, subject = '', priority = false, hidden = false, peek } = Astro.props;
+const cls = Astro.props.class;
+const bg = (lqip as Record<string, string>)[name];
+const style = [pos ? `object-position:${pos}` : '', bg ? `background:center/cover url(${bg})` : ''].filter(Boolean).join(';');
+---
+<img
+  class={cls}
+  src={photo(name)}
+  srcset={[400, 800].filter((v) => v < w).map((v) => `${photo(`${name}-${v}`)} ${v}w`).concat(`${photo(name)} ${w}w`).join(', ')}
+  sizes={sizes}
+  width={w}
+  height={h}
+  alt={alt}
+  loading={priority ? 'eager' : 'lazy'}
+  decoding="async"
+  fetchpriority={priority ? 'high' : undefined}
+  hidden={hidden || undefined}
+  data-peek-for={peek}
+  style={style || undefined}
+  data-source="library-pexels"
+  data-subject={subject}
+/>

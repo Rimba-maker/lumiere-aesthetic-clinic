@@ -1,0 +1,21 @@
+---
+import { steps } from '../data/clinic';
+import Img from './Img.astro';
+---
+<section class="section" id="proses" aria-labelledby="proses-h">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="proses-h">Dari konsultasi sampai kontrol dalam 3 langkah</h2>
+    </div>
+    <div class="grid">
+      {steps.map((s) => (
+        <article class={`tile span-4 focus-${s.img}`}>
+          <div class="tile__media"><Img sizes="(max-width: 639px) 90vw, (max-width: 1023px) 87vw, 33vw" name={s.img} alt={s.alt} w={1000} h={667} subject={s.title} /></div>
+          <p class="tile__facts">Langkah {s.n}</p>
+          <div class="tile__head"><h3>{s.title}</h3></div>
+          <p class="ph-hide nt-hide">{s.line}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

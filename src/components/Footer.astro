@@ -1,57 +1,59 @@
 ---
+import { brand, branches } from '../data/clinic';
+interface Props { inner?: boolean }
+const { inner = false } = Astro.props;
+const p = inner ? '/' : '';
 ---
-<footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <div>
-        <div class="footer-logo">
-          Lumière <span class="footer-logo-dot">✦</span>
-        </div>
-        <div class="footer-tagline">"Where science meets beauty."</div>
-        <div class="footer-socials">
-          <a href="#" class="footer-social" aria-label="Instagram">📷</a>
-          <a href="#" class="footer-social" aria-label="TikTok">🎵</a>
-          <a href="#" class="footer-social" aria-label="YouTube">▶</a>
-          <a href="#" class="footer-social" aria-label="WhatsApp">💬</a>
-        </div>
+<footer class="footer closing g2m" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--type">
+      <div class="section-head">
+        <h2 id="close-h">Mulai konsultasi gratis dengan dokter kami</h2>
+        <p>Konsultasi pertama gratis di semua cabang.</p>
       </div>
-      <div>
-        <div class="footer-col-title">Cabang</div>
-        <div class="footer-links">
-          <a href="#" class="footer-link">Jakarta — PIK</a>
-          <a href="#" class="footer-link">Jakarta — Kemang</a>
-          <a href="#" class="footer-link">Jakarta — Senopati</a>
-          <a href="#" class="footer-link">Surabaya</a>
-          <a href="#" class="footer-link">Bandung</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-col-title">Layanan</div>
-        <div class="footer-links">
-          <a href="#" class="footer-link">Signature Treatments</a>
-          <a href="#" class="footer-link">Laser Therapy</a>
-          <a href="#" class="footer-link">Injectable</a>
-          <a href="#" class="footer-link">Membership</a>
-          <a href="#" class="footer-link">Konsultasi Gratis</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-col-title">Informasi</div>
-        <div class="footer-links">
-          <a href="#" class="footer-link">Tentang Lumière</a>
-          <a href="#" class="footer-link">Tim Dokter</a>
-          <a href="#" class="footer-link">Blog &amp; Edukasi</a>
-          <a href="#" class="footer-link">Kebijakan Privasi</a>
-          <a href="#" class="footer-link">Syarat &amp; Ketentuan</a>
-        </div>
-      </div>
+      <a class="btn btn--primary btn--xl btn--wide" href={`${p}#booking`}>{brand.mainAction}<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-legal">© 2025 Lumière Aesthetic Clinic. Seluruh hak dilindungi undang-undang.</p>
-      <div class="footer-certs">
-        <span class="footer-cert">ISO 9001</span>
-        <span class="footer-cert">BPOM Certified</span>
-        <span class="footer-cert">KemenKes RI</span>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href={`${p}#top`}>{brand.name}</a>
+          <p class="footer__lede">{brand.tagline}</p>
+        </div>
+        <div class="span-2 footer__col">
+          <h4>Treatment</h4>
+          <ul>
+            <li><a href={`${p}#treatment`}>Signature treatment</a></li>
+            <li><a href={`${p}#concern`}>Concern kulit</a></li>
+            <li><a href={`${p}#teknologi`}>Teknologi</a></li>
+          </ul>
+        </div>
+        <div class="span-2 footer__col">
+          <h4>Klinik</h4>
+          <ul>
+            <li><a href={`${p}#proses`}>Proses</a></li>
+            <li><a href={`${p}#dokter`}>Dokter</a></li>
+            <li><a href={`${p}#klinik`}>Ruang klinik</a></li>
+          </ul>
+        </div>
+        <div class="span-2 footer__col">
+          <h4>Paket</h4>
+          <ul>
+            <li><a href={`${p}#membership`}>Membership</a></li>
+            <li><a href={`${p}#faq`}>Pertanyaan</a></li>
+            <li><a href={`${p}#booking`}>Booking</a></li>
+          </ul>
+        </div>
+        <div class="span-2 footer__col">
+          <h4>Cabang</h4>
+          <ul>
+            {branches.map((b) => <li>{b}</li>)}
+          </ul>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; {brand.year} {brand.fullName} &nbsp; <a href="/privacy/">Privacy</a> &nbsp; <a href="/terms/">Terms</a></span>
+        <div class="socials"></div>
+        <a class="credits" href="/credits/">Foto dari Pexels</a>
       </div>
     </div>
   </div>
