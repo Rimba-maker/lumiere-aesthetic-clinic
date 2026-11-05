@@ -12,6 +12,8 @@ export const photo = (name: string) => `/assets/img/${name}.webp`;
 
 export interface Treatment {
   key: string;
+  w?: number;
+  h?: number;
   name: string;
   line: string;
   price: string;
@@ -20,7 +22,7 @@ export interface Treatment {
 }
 
 export const treatments: Treatment[] = [
-  { key: 'glow', name: 'Lumière Glow Facial', line: 'Facial multi-step dengan LED therapy.', price: 'Rp 850 rb / sesi', img: 'tx-glow', alt: 'Masker LED merah menyala saat sesi glow facial' },
+  { key: 'glow', w: 640, h: 800, name: 'Lumière Glow Facial', line: 'Facial multi-step dengan LED therapy.', price: 'Rp 850 rb / sesi', img: 'tx-glow', alt: 'Masker LED merah menyala saat sesi glow facial' },
   { key: 'hydra', name: 'HydraFacial MD', line: 'Deep cleansing dan serum infusion.', price: 'Rp 1,5 jt / sesi', img: 'tx-hydra', alt: 'Terapis memijat wajah klien saat HydraFacial' },
   { key: 'pico', name: 'Pico Laser', line: 'Atasi flek dan scar, remajakan kulit.', price: 'Rp 2,2 jt / sesi', img: 'tx-pico', alt: 'Dokter dengan kacamata pelindung menjalankan pico laser' },
   { key: 'booster', name: 'Skin Booster Injection', line: 'Hidrasi mendalam dari dalam.', price: 'Rp 3,5 jt / sesi', img: 'tx-booster', alt: 'Jarum skin booster pada kulit wajah' },

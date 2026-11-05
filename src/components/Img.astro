@@ -24,7 +24,7 @@ const style = [pos ? `object-position:${pos}` : '', bg ? `background:center/cove
 <img
   class={cls}
   src={photo(name)}
-  srcset={`${photo(name + '-400')} 400w, ${photo(name + '-800')} 800w, ${photo(name)} ${w}w`}
+  srcset={[400, 800].filter((v) => v < w).map((v) => `${photo(`${name}-${v}`)} ${v}w`).concat(`${photo(name)} ${w}w`).join(', ')}
   sizes={sizes}
   width={w}
   height={h}
