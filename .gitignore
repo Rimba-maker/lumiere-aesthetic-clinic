@@ -8,3 +8,7 @@ node_modules/
 # Private documentation and references
 36-klinik-kecantikan-estetika-PRD.md
 _design-reference.astro
+
+# Local checker output
+shots/
+.taste-skill/

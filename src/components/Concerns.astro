@@ -1,0 +1,32 @@
+---
+import { concerns, photo } from '../data/clinic';
+const rows = [concerns.slice(0, 3), concerns.slice(3)];
+---
+<section class="section g2" id="concern" aria-labelledby="concern-h">
+  <div class="wrap">
+    <div class="group">
+      <div class="section-head">
+        <h2 id="concern-h">Solusi untuk 6 concern kulit</h2>
+        <p>Dokter menentukan treatment dari kondisi kulit Anda, lalu menyusun rencananya bersama Anda.</p>
+      </div>
+      <div class="grid">
+        {rows[0].map((c) => (
+          <a class="tile span-4" href="#booking">
+            <div class="tile__media"><img src={photo(c.img)} alt={c.alt} width="1000" height="667" loading="lazy" decoding="async" style={`object-position:${c.pos}`} data-source="library-pexels" data-subject={c.name} /></div>
+            <div class="tile__head"><h3>{c.name}</h3></div>
+            <p>{c.line}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+    <div class="grid">
+      {rows[1].map((c) => (
+        <a class="tile span-4" href="#booking">
+          <div class="tile__media"><img src={photo(c.img)} alt={c.alt} width="1000" height="667" loading="lazy" decoding="async" style={`object-position:${c.pos}`} data-source="library-pexels" data-subject={c.name} /></div>
+          <div class="tile__head"><h3>{c.name}</h3></div>
+          <p>{c.line}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

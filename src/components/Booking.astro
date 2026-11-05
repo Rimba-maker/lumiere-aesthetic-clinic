@@ -1,108 +1,37 @@
 ---
+import { brand, photo } from '../data/clinic';
 ---
-<section class="section section--white" id="booking">
-  <div class="container">
-    <div class="booking-inner">
-
-      <div>
-        <p class="label-tag" data-reveal>Gratis, Tanpa Syarat</p>
-        <h2 class="section-heading" data-reveal data-delay="1">
-          Mulai Perjalanan<br />Glow Anda
-        </h2>
-        <p class="section-sub" style="margin-top:16px" data-reveal data-delay="2">
-          Konsultasi pertama gratis. Tim kami akan analisis kondisi kulit dan rekomendasikan
-          treatment yang sesuai untuk Anda — tanpa tekanan, tanpa komitmen.
-        </p>
-        <div class="booking-info-list" data-reveal data-delay="3">
-          <div class="booking-info-item">
-            <div class="booking-info-icon">📍</div>
-            <div>
-              <div class="booking-info-title">5 Lokasi Tersedia</div>
-              <div class="booking-info-text">Jakarta (PIK, Kemang, Senopati) · Surabaya · Bandung</div>
-            </div>
-          </div>
-          <div class="booking-info-item">
-            <div class="booking-info-icon">🕐</div>
-            <div>
-              <div class="booking-info-title">Buka 7 Hari Seminggu</div>
-              <div class="booking-info-text">Senin–Jumat 09.00–21.00 · Sabtu–Minggu 09.00–18.00</div>
-            </div>
-          </div>
-          <div class="booking-info-item">
-            <div class="booking-info-icon">📱</div>
-            <div>
-              <div class="booking-info-title">WhatsApp Kami Langsung</div>
-              <div class="booking-info-text">+62 812-3456-7890 untuk booking atau pertanyaan cepat</div>
-            </div>
-          </div>
+<section class="section" id="booking" aria-labelledby="booking-h">
+  <div class="wrap">
+    <div class="grid grid--top fill">
+      <div class="span-6 stack-4">
+        <div class="section-head">
+          <h2 id="booking-h">Jadwalkan konsultasi pertama Anda</h2>
+          <p>Konsultasi pertama gratis. Tim kami menghubungi Anda lewat WhatsApp untuk konfirmasi jadwal.</p>
+        </div>
+        <div class="frame frame--photo">
+          <img class="frame__img" src={photo('booking-consult')} width="1200" height="800" loading="lazy" decoding="async" alt="Dokter berkonsultasi dengan pasien di ruang praktik" style="object-position: 50% 35%; --ratio: 56%" data-source="library-pexels" data-subject="doctor consultation" />
         </div>
       </div>
-
-      <div class="booking-form" data-reveal data-delay="2">
-        <div class="booking-form-title">Book Konsultasi Gratis</div>
-        <div class="booking-form-sub">Isi form di bawah dan kami akan konfirmasi jadwal Anda dalam 2 jam.</div>
-        <form id="bookingForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="nama">Nama Lengkap</label>
-              <input class="form-input" type="text" id="nama" placeholder="Nama Anda" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="wa">Nomor WhatsApp</label>
-              <input class="form-input" type="tel" id="wa" placeholder="+62 8xx-xxxx-xxxx" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="concern">Concern Utama Kulit</label>
-            <select class="form-select" id="concern">
-              <option value="" disabled selected>Pilih concern Anda…</option>
-              <option>Flek &amp; Pigmentasi</option>
-              <option>Jerawat &amp; Bekas Jerawat</option>
-              <option>Anti-Aging &amp; Kerutan</option>
-              <option>Kulit Kusam &amp; Tidak Merata</option>
-              <option>Pori-pori Besar</option>
-              <option>Kulit Kendur</option>
-              <option>Lainnya</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="cabang">Cabang Preferensi</label>
-              <select class="form-select" id="cabang">
-                <option value="" disabled selected>Pilih cabang…</option>
-                <option>Jakarta — PIK</option>
-                <option>Jakarta — Kemang</option>
-                <option>Jakarta — Senopati</option>
-                <option>Surabaya</option>
-                <option>Bandung</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="tanggal">Tanggal Preferensi</label>
-              <input class="form-input" type="date" id="tanggal" />
-            </div>
-          </div>
-          <button type="submit" class="btn btn-gold btn-lg form-submit">
-            Book Konsultasi Gratis →
-          </button>
-        </form>
-      </div>
-
+      <form class="span-6 start-7 form ground-surface" method="post" action="mailto:booking@lumiere.example" enctype="text/plain" style="padding: var(--s-7); border-radius: var(--r-lg)">
+        <label class="field field--full">Nama lengkap<input type="text" name="nama" autocomplete="name" required></label>
+        <label class="field">Nomor WhatsApp<input type="tel" name="whatsapp" autocomplete="tel" inputmode="tel" required></label>
+        <label class="field">Tanggal booking<input type="text" name="tanggal" placeholder="Contoh: 12 Desember" required></label>
+        <label class="field">Concern kulit
+          <select name="concern" required>
+            <option value="">Pilih concern</option>
+            <option>Wajah</option><option>Tubuh</option><option>Laser</option><option>Injectable</option><option>Skincare</option><option>Pria</option>
+          </select>
+        </label>
+        <label class="field">Cabang
+          <select name="cabang" required>
+            <option value="">Pilih cabang</option>
+            <option>Jakarta, PIK</option><option>Jakarta, Kemang</option><option>Jakarta, Senopati</option><option>Surabaya</option><option>Bandung</option>
+          </select>
+        </label>
+        <div class="btn-row"><button class="btn btn--primary" type="submit">{brand.mainAction}</button></div>
+        <p class="t-small muted">Kami membalas lewat WhatsApp pada hari kerja.</p>
+      </form>
     </div>
   </div>
 </section>
-
-<script>
-  const form = document.getElementById('bookingForm') as HTMLFormElement;
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('.form-submit') as HTMLButtonElement;
-    btn.textContent = 'Mengirim…';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = '✓ Booking terkirim! Kami akan hubungi Anda segera.';
-      (btn as HTMLElement).style.background = '#2A7A5A';
-      (btn as HTMLElement).style.borderColor = '#2A7A5A';
-    }, 1200);
-  });
-</script>

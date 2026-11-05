@@ -2,31 +2,35 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
-import SignatureTreatments from '../components/SignatureTreatments.astro';
-import TreatmentCategories from '../components/TreatmentCategories';
+import Treatments from '../components/Treatments.astro';
+import Concerns from '../components/Concerns.astro';
 import Technology from '../components/Technology.astro';
-import BeforeAfter from '../components/BeforeAfter';
-import OurDoctors from '../components/OurDoctors.astro';
-import ClinicGallery from '../components/ClinicGallery.astro';
+import Process from '../components/Process.astro';
+import Doctors from '../components/Doctors.astro';
+import ClinicTour from '../components/ClinicTour.astro';
 import Membership from '../components/Membership.astro';
-import Testimonial from '../components/Testimonial';
+import Faq from '../components/Faq.astro';
 import Booking from '../components/Booking.astro';
 import Footer from '../components/Footer.astro';
+import { brand } from '../data/clinic';
 ---
 
 <BaseLayout>
   <Navbar />
-  <main>
+  <main id="top">
     <Hero />
-    <SignatureTreatments />
-    <TreatmentCategories client:visible />
+    <Treatments />
+    <Concerns />
     <Technology />
-    <BeforeAfter client:visible />
-    <OurDoctors />
-    <ClinicGallery />
+    <Process />
+    <Doctors />
+    <ClinicTour />
     <Membership />
-    <Testimonial client:visible />
+    <Faq />
     <Booking />
   </main>
   <Footer />
+  <nav class="actionbar" aria-label="Aksi cepat">
+    <a class="btn btn--primary" href="#booking">{brand.mainAction}</a>
+  </nav>
 </BaseLayout>

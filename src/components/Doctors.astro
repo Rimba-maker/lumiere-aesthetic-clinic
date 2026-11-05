@@ -1,0 +1,21 @@
+---
+import { doctors, photo } from '../data/clinic';
+---
+<section class="section" id="dokter" aria-labelledby="dokter-h">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="dokter-h">4 dokter yang menangani Anda</h2>
+      <p>Dermatolog, dokter estetika, spesialis laser, dan dokter umum untuk perawatan tubuh.</p>
+    </div>
+    <div class="grid">
+      {doctors.map((d) => (
+        <article class="tile tile--portrait span-3">
+          <div class="tile__media"><img src={photo(d.img)} alt={d.alt} width="900" height="1125" loading="lazy" decoding="async" style={`object-position:${d.pos}`} data-source="library-pexels" data-subject="doctor portrait" /></div>
+          <div class="tile__head"><h3>{d.name}</h3></div>
+          <p class="tile__facts">{d.role}</p>
+          <p>{d.line}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
