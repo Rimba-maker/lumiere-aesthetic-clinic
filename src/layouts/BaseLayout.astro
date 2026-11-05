@@ -112,9 +112,11 @@ const schema = {
     #teknologi .frame { --ratio: 45%; }
     #treatment [data-peek] .frame { --ratio: 150%; }
     #membership .grid > .tile { grid-column: 1 / -1; }
-    #membership { --tile-ratio: 5 / 2; }
+    #membership { --tile-ratio: 2 / 1; }
     .booking__photo { --ratio: 125%; }
-    .wall a { height: 150px; }
+    .wall__row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .wall__row a:nth-child(3) { grid-column: 1 / -1; }
+    .wall a { height: 100px; }
   }
   .skip { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .skip:focus { width: auto; height: auto; clip-path: none; padding: var(--s-2) var(--s-3); background: var(--bg); z-index: 20; }

@@ -11,7 +11,7 @@ import Img from './Img.astro';
     <div class="grid">
       {doctors.map((d) => (
         <article class={`tile tile--portrait span-3 focus-${d.img}`}>
-          <div class="tile__media"><Img name={d.img} alt={d.alt} w={900} h={1125} sizes="(max-width: 639px) 50vw, 25vw" subject="doctor portrait" /></div>
+          <div class="tile__media"><Img name={d.img} alt={d.alt} w={900} h={1125} subject="doctor portrait" full={d.img === 'dr-kevin' || d.img === 'dr-linda'} /></div>
           <div class="tile__head"><h3>{d.name}</h3></div>
           <p class="tile__facts">{d.role}</p>
           <p class="ph-hide nt-hide">{d.line}</p>

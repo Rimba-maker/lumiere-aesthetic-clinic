@@ -14,15 +14,16 @@ interface Props {
   class?: string;
   hidden?: boolean;
   peek?: string;
+  full?: boolean; // landscape file cropped to a portrait frame: never offer the small variant
 }
-const { name, alt, w, h, sizes = '(max-width: 639px) 100vw, 50vw', pos, subject = '', priority = false, hidden = false, peek } = Astro.props;
+const { name, alt, w, h, sizes = '100vw', pos, subject = '', priority = false, hidden = false, peek, full = false } = Astro.props;
 const cls = Astro.props.class;
 ---
 <img
   class={cls}
   src={photo(name)}
-  srcset={`${photo(name + '-600')} 600w, ${photo(name)} ${w}w`}
-  sizes={sizes}
+  srcset={full ? undefined : `${photo(name + '-600')} 600w, ${photo(name)} ${w}w`}
+  sizes={full ? undefined : sizes}
   width={w}
   height={h}
   alt={alt}

@@ -10,7 +10,7 @@ import Img from './Img.astro';
     <div class="grid">
       {concerns.map((c) => (
         <a class={`tile span-4 focus-${c.img}`} href="#booking">
-          <div class="tile__media"><Img name={c.img} alt={c.alt} w={1000} h={667} sizes="(max-width: 639px) 50vw, 33vw" subject={c.name} /></div>
+          <div class="tile__media"><Img name={c.img} alt={c.alt} w={1000} h={667} subject={c.name} /></div>
           <div class="tile__head"><h3>{c.name}</h3></div>
           <p class="ph-hide nt-hide">{c.line}</p>
         </a>
