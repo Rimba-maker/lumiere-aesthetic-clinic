@@ -8,7 +8,8 @@ export const brand = {
   year: 2026,
 } as const;
 
-export const photo = (name: string) => `/assets/img/${name}.webp`;
+export const url = (p: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + p;
+export const photo = (name: string) => url(`/assets/img/${name}.webp`);
 
 export interface Treatment {
   key: string;

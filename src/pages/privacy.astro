@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { url } from '../data/clinic';
 ---
 <BaseLayout title="Privacy | Lumière Aesthetic Clinic" inner>
   <Navbar inner />
@@ -10,7 +11,7 @@ import Footer from '../components/Footer.astro';
       <h1 class="t-h2">Privacy</h1>
       <p>Kami hanya memakai nama, nomor WhatsApp, concern kulit, cabang dan tanggal yang Anda isi di form booking untuk mengatur jadwal konsultasi.</p>
       <p>Data tersebut tidak dijual atau dibagikan ke pihak lain di luar tim klinik. Untuk meminta penghapusan data, hubungi tim kami lewat WhatsApp yang menghubungi Anda.</p>
-      <p><a class="link" href="/">Kembali ke halaman utama</a></p>
+      <p><a class="link" href={url("/")}>Kembali ke halaman utama</a></p>
     </div>
   </main>
   <Footer inner />

@@ -1,5 +1,5 @@
 ---
-import { brand, branches } from '../data/clinic';
+import { brand, branches, url } from '../data/clinic';
 interface Props { inner?: boolean }
 const { inner = false } = Astro.props;
 const p = inner ? '/' : '';
@@ -51,9 +51,9 @@ const p = inner ? '/' : '';
         </div>
       </div>
       <div class="footer__legal">
-        <span>&copy; {brand.year} {brand.fullName} &nbsp; <a href="/privacy/">Privacy</a> &nbsp; <a href="/terms/">Terms</a></span>
+        <span>&copy; {brand.year} {brand.fullName} &nbsp; <a href={url("/privacy/")}>Privacy</a> &nbsp; <a href="/terms/">Terms</a></span>
         <div class="socials"></div>
-        <a class="credits" href="/credits/">Foto dari Pexels</a>
+        <a class="credits" href={url("/credits/")}>Foto dari Pexels</a>
       </div>
     </div>
   </div>

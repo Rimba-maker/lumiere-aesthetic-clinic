@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { url } from '../data/clinic';
 ---
 <BaseLayout title="Kredit foto | Lumière Aesthetic Clinic" inner>
   <Navbar inner />
@@ -42,7 +43,7 @@ import Footer from '../components/Footer.astro';
         <li><a class="link" href="https://www.pexels.com/photo/4612159/" rel="noopener">Paket VIP</a></li>
         <li><a class="link" href="https://www.pexels.com/photo/7578806/" rel="noopener">Booking</a></li>
       </ul>
-      <p><a class="link" href="/">Kembali ke halaman utama</a></p>
+      <p><a class="link" href={url("/")}>Kembali ke halaman utama</a></p>
     </div>
   </main>
   <Footer inner />
