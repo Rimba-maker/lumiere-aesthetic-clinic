@@ -1,16 +1,16 @@
 ---
 import { brand, photo } from '../data/clinic';
 ---
-<section class="section" id="booking" aria-labelledby="booking-h">
+<section class="section" id="booking" style="--hm: 2" aria-labelledby="booking-h">
   <div class="wrap">
     <div class="grid grid--top fill">
       <div class="span-6 stack-4">
         <div class="section-head">
           <h2 id="booking-h">Jadwalkan konsultasi pertama Anda</h2>
-          <p>Konsultasi pertama gratis. Tim kami menghubungi Anda lewat WhatsApp untuk konfirmasi jadwal.</p>
+          <p class="nt-hide">Konsultasi pertama gratis. Tim kami menghubungi Anda lewat WhatsApp untuk konfirmasi jadwal.</p>
         </div>
-        <div class="frame frame--photo">
-          <img class="frame__img" src={photo('booking-consult')} width="1200" height="800" loading="lazy" decoding="async" alt="Dokter berkonsultasi dengan pasien di ruang praktik" style="object-position: 50% 35%; --ratio: 56%" data-source="library-pexels" data-subject="doctor consultation" />
+        <div class="frame frame--photo booking__photo">
+          <img class="frame__img" src={photo('booking-consult')} width="1200" height="800" loading="lazy" decoding="async" alt="Dokter berkonsultasi dengan pasien di ruang praktik" style="object-position: 50% 35%" data-source="library-pexels" data-subject="doctor consultation" />
         </div>
       </div>
       <form class="span-6 start-7 form ground-surface" method="post" action="mailto:booking@lumiere.example" enctype="text/plain" style="padding: var(--s-7); border-radius: var(--r-lg)">

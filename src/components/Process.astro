@@ -8,13 +8,11 @@ import { steps, photo } from '../data/clinic';
     </div>
     <div class="grid">
       {steps.map((s) => (
-        <article class="card card--row span-4">
-          <span class="step-num" aria-hidden="true">{s.n}</span>
-          <h3>{s.title}</h3>
-          <p>{s.line}</p>
-          <div class="panel panel--flush">
-            <img class="frame__img" src={photo(s.img)} alt={s.alt} width="1000" height="667" loading="lazy" decoding="async" style={`object-position:${s.pos}`} data-source="library-pexels" data-subject={s.title} />
-          </div>
+        <article class="tile span-4">
+          <div class="tile__media"><img src={photo(s.img)} alt={s.alt} width="1000" height="667" loading="lazy" decoding="async" style={`object-position:${s.pos}`} data-source="library-pexels" data-subject={s.title} /></div>
+          <p class="tile__facts">Langkah {s.n}</p>
+          <div class="tile__head"><h3>{s.title}</h3></div>
+          <p class="ph-hide">{s.line}</p>
         </article>
       ))}
     </div>

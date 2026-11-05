@@ -29,12 +29,12 @@ export const treatments: Treatment[] = [
 ];
 
 export const concerns = [
-  { name: 'Wajah', line: 'Acne, anti-aging, pigmentasi, brightening.', img: 'cn-wajah', alt: 'Close-up wajah dengan kulit halus', pos: '50% 40%' },
-  { name: 'Tubuh', line: 'Slimming, cellulite, stretch mark.', img: 'cn-tubuh', alt: 'Klien berbaring saat perawatan tubuh', pos: '50% 40%' },
-  { name: 'Laser', line: 'Hair removal, tattoo removal, scar treatment.', img: 'cn-laser', alt: 'Perangkat laser di kaki klien', pos: '50% 35%' },
-  { name: 'Injectable', line: 'Botox, filler, skin booster, threadlift.', img: 'cn-injectable', alt: 'Dokter merawat wajah klien dengan sarung tangan', pos: '60% 45%' },
-  { name: 'Skincare', line: 'Konsultasi produk yang personal untuk kulit Anda.', img: 'cn-skincare', alt: 'Produk skincare tertata di kain krem', pos: '50% 50%' },
-  { name: 'Pria', line: 'Perawatan kulit untuk pria urban yang peduli skincare.', img: 'cn-pria', alt: 'Pria mengoleskan krim wajah', pos: '50% 35%' },
+  { name: 'Perawatan wajah', line: 'Acne, anti-aging, pigmentasi, brightening.', img: 'cn-wajah', alt: 'Close-up wajah dengan kulit halus', pos: '50% 40%' },
+  { name: 'Perawatan tubuh', line: 'Slimming, cellulite, stretch mark.', img: 'cn-tubuh', alt: 'Klien berbaring saat perawatan tubuh', pos: '50% 40%' },
+  { name: 'Treatment laser', line: 'Hair removal, tattoo removal, scar treatment.', img: 'cn-laser', alt: 'Perangkat laser di kaki klien', pos: '50% 35%' },
+  { name: 'Treatment injectable', line: 'Botox, filler, skin booster, threadlift.', img: 'cn-injectable', alt: 'Dokter merawat wajah klien dengan sarung tangan', pos: '60% 45%' },
+  { name: 'Konsultasi skincare', line: 'Produk yang dipilih sesuai kulit Anda.', img: 'cn-skincare', alt: 'Produk skincare tertata di kain krem', pos: '50% 50%' },
+  { name: 'Perawatan kulit pria', line: 'Untuk pria urban yang peduli skincare.', img: 'cn-pria', alt: 'Pria mengoleskan krim wajah', pos: '50% 35%' },
 ] as const;
 
 export const devices = [

@@ -69,14 +69,37 @@ const schema = {
 <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
 <style is:global>
   /* page CSS: only what sits inside a visual and the kit lacks */
-  .wall { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; }
-  .wall > a, .wall > div { position: relative; overflow: clip; height: 240px; background: var(--surface); }
+  .wall { display: grid; gap: 2px; }
+  .wall__row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; }
+  .wall a { position: relative; display: block; overflow: clip; height: 240px; background: var(--surface); }
   .wall img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--ease); }
-  .wall > a:hover img { transform: scale(1.03); }
-  @media (max-width: 1023px) { .wall { grid-template-columns: repeat(2, minmax(0, 1fr)); } .wall > * { height: 200px; } }
-  @media (max-width: 639px) { .wall > * { height: 140px; } }
-  #membership { --p-h: 180px; }
-  #proses { --p-h: 320px; }
+  .wall a:hover img { transform: scale(1.03); }
+  @media (max-width: 1279px) { .wall a { height: 200px; } }
+  @media (max-width: 639px) { .wall a { height: 150px; } }
+  .tile .btn { justify-self: start; }
+  /* tile ratios per section, the kit's own variable */
+  #concern { --tile-ratio: 2 / 1; }
+  .focus-dr-anisa img { object-position: 50% 25%; } .focus-dr-kevin img { object-position: 50% 20%; }
+  .focus-dr-linda img { object-position: 84% 30%; } .focus-dr-raka img { object-position: 50% 20%; }
+  .booking__photo { --ratio: 56%; }
+  /* tablet and phone: the screens the checker counts */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    #proses, #dokter, #membership { --h: 2; }
+    #klinik .wall a { height: 240px; }
+    .nt-hide { display: none; }
+    .booking__photo { --ratio: 40%; }
+  }
+  @media (max-width: 1023px) { .faq__item.nt-hide { display: none; } }
+  @media (max-width: 639px) {
+    .ph-hide { display: none; }
+    #concern { --tile-ratio: 4 / 3; }
+    #dokter .tile--portrait { --tile-ratio: 1 / 1; }
+    #teknologi .frame { --ratio: 38%; }
+    #treatment [data-peek] .frame { --ratio: 150%; }
+    #membership .grid > .tile { grid-column: 1 / -1; }
+    #membership { --tile-ratio: 5 / 2; }
+    .booking__photo { --ratio: 125%; }
+  }
   .panel > img.frame__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .skip { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .skip:focus { width: auto; height: auto; clip-path: none; padding: var(--s-2) var(--s-3); background: var(--bg); z-index: 20; }

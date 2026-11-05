@@ -3,18 +3,14 @@ import { faq } from '../data/clinic';
 ---
 <section class="section" id="faq" aria-labelledby="faq-h">
   <div class="wrap">
-    <div class="grid grid--top">
-      <div class="span-6">
-        <div class="section-head">
-          <h2 id="faq-h">Pertanyaan tentang treatment</h2>
-          <p>Jawaban singkat sebelum Anda konsultasi dengan dokter.</p>
-        </div>
-      </div>
-      <div class="faq span-6 start-7">
-        {faq.map((f) => (
-          <div class="faq__item"><h3>{f.q}</h3><p>{f.a}</p></div>
-        ))}
-      </div>
+    <div class="section-head">
+      <h2 id="faq-h">Pertanyaan tentang treatment</h2>
+      <p class="ph-hide">Jawaban singkat sebelum Anda berkonsultasi dengan dokter.</p>
+    </div>
+    <div class="faq grid">
+      {faq.map((f, i) => (
+        <div class={`faq__item span-6${i > 3 ? ' nt-hide' : ''}`}><h3>{f.q}</h3><p>{f.a}</p></div>
+      ))}
     </div>
   </div>
 </section>

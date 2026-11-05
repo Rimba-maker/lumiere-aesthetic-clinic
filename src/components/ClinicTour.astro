@@ -1,15 +1,20 @@
 ---
 import { tour, photo } from '../data/clinic';
+const rows = [tour.slice(0, 3), tour.slice(3)];
 ---
 <section class="section" id="klinik" aria-labelledby="klinik-h">
   <div class="wrap">
     <div class="section-head">
       <h2 id="klinik-h">Ruang klinik yang nyaman seperti spa premium</h2>
-      <p>Setiap sudut dirancang untuk memberi pengalaman perawatan yang tenang, bukan suasana rumah sakit yang kaku.</p>
+      <p>Setiap sudut dirancang untuk perawatan yang tenang, bukan suasana rumah sakit yang kaku.</p>
     </div>
     <div class="wall">
-      {tour.map((t) => (
-        <a href="#booking"><img src={photo(t.img)} alt={t.alt} width="1200" height="800" loading="lazy" decoding="async" style={`object-position:${t.pos}`} data-source="library-pexels" data-subject="clinic interior" /></a>
+      {rows.map((row) => (
+        <div class="wall__row">
+          {row.map((t) => (
+            <a href="#booking"><img src={photo(t.img)} alt={t.alt} width="1200" height="800" loading="lazy" decoding="async" style={`object-position:${t.pos}`} data-source="library-pexels" data-subject="clinic interior" /></a>
+          ))}
+        </div>
       ))}
     </div>
   </div>
